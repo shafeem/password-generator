@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-      'faint-orange' : '#FFF0ED'
+      'faint-orange' : '#FFF0ED',
+      'veryweak' : '#ED1B1B'
     },
   },
   },

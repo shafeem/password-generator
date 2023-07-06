@@ -8,14 +8,14 @@ const Body = () => {
     uppercase : false,
     lowercase : false,
     numbers : false,
-    symbols : false
+    symbols : false,
   })
 
 
   return (
     <div className='flex flex-row  bg-faint-orange gap-5'>
       <div className='w-5/12'>
-        <Image />
+        <Image Password={Password}/>
       </div>
       <div className='w-7/12'>
         <Input Password={Password} setPassword={setPassword} />
