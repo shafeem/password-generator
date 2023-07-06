@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SeekBar from "./SeekBar";
+import CheckBox from "./CheckBox";
 
 const Input = (props) => {
   const { Password, setPassword } = props;
@@ -100,9 +101,12 @@ const Input = (props) => {
           </span>
         </button>
       </div>
+      <div className=" h-10"></div>
       <div className="flex pl-4 items-center">
         <p className="pl-16 text-gray-800 font-serif md:text-lg text-base font-thin"> Characters used:</p>
-
+        <div className="flex w-full ">
+        <CheckBox Password={Password} setPassword={setPassword}/>
+        </div>
       </div>
     </div>
   );

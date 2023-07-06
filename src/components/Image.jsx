@@ -1,9 +1,10 @@
 import React from 'react'
-import good from '../assets/images/good.jpg'
-import strong from '../assets/images/strong.jpg'
-import verystrong from '../assets/images/very storng.jpg'
-import veryweak from '../assets/images/veryweek.jpg'
-import weak from '../assets/images/week.jpg'
+import good from '../assets/images/good.svg'
+import strong from '../assets/images/strong.svg'
+import verystrong from '../assets/images/very storng.svg'
+import veryweak from '../assets/images/veryweek.svg'
+import weak from '../assets/images/week.svg'
+
 
 const Image = (props) => {
   const {Password} = props
@@ -25,8 +26,8 @@ const Image = (props) => {
   const images = ImgChecker(Password.length)
 
   return (
-    <div className=' h-20'>
-      <img src={`${images}`} alt="" />
+    <div className='flex'>
+      <img className='justify-end pl-48 h-96' src={`${images}`} alt="" />
     </div>
   )
 }

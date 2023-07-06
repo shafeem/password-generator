@@ -6,7 +6,7 @@ const Body = () => {
   const [Password,setPassword] = useState({
     length : 5,
     uppercase : false,
-    lowercase : false,
+    lowercase : true,
     numbers : false,
     symbols : false,
   })

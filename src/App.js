@@ -17,6 +17,7 @@ function App() {
     <div className='bg-faint-orange pt-10'>
       <Body />
     </div>
+    <div className='bg-grn h-20'/>
     </div>
   );
 }

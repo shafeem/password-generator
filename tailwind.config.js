@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       colors:{
       'faint-orange' : '#FFF0ED',
-      'veryweak' : '#ED1B1B'
+      'veryweak' : '#ED1B1B',
+      'grn' : '#0C273D'
     },
   },
   },
