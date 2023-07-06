@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes rotateOnce {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-rotateOnce {
+  animation: rotateOnce 0.1s linear; 
+}
+.seekbar {
+  width: 100%;
+  height: 10px;
+  background-color: #ccc;
+}
+
+.seekbar-fill {
+  height: 100%;
+  background-color: #00a8ff;
+}
