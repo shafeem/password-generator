@@ -3,8 +3,9 @@ import SeekBar from "./SeekBar";
 import CheckBox from "./CheckBox";
 
 const Input = (props) => {
-  const { Password, setPassword } = props;
+  const { Password, setPassword,generatePassword,handleText } = props;
   const [isRotate, setIsRotate] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   const handleClick = () => {
     setIsRotate(true);
@@ -55,6 +56,8 @@ const Input = (props) => {
     }
   };
 
+  // const ps = generatePassword()
+
   const bgColor = bgChecker(Password.length)
   const strengthText = strengthChecker(Password.length);
 
@@ -63,7 +66,7 @@ const Input = (props) => {
       <div className="w-full flex gap-10 md:px-12">
         <div className="border-2 max-w-xl rounded-3xl md:w-full w-28 h-12 border-gray-300 decoration-transparent md:h-14 flex flex-row md:px-20 items-center justify-between">
           <div>
-            <p className="text-gray-800 font-serif text-center">54Wfs</p>
+            <p className="text-gray-800 font-serif text-center">{`${handleText}`}</p>
           </div>
           <div className="flex-grow"></div>
           <div className="flex items-center gap-1">
@@ -74,14 +77,24 @@ const Input = (props) => {
             <div className="flex-grow"></div>
             <button
               className={`transition-all ${isRotate ? "animate-spin" : ""}`}
-              onClick={handleClick}
+              onClick={()=>{
+                handleClick(); generatePassword();
+              }}
             >
               <span className="material-symbols-outlined">refresh</span>
             </button>
           </div>
         </div>
-        <button className="bg-blue-600 text-white text-sm md:text-md w-28 rounded-3xl font-bold h-12 md:h-14 uppercase px-2 hover:scale-110 duration-500 hover:shadow">
-          c o p y
+        <button onClick={()=>{
+              if (handleText.length > 0) {
+                navigator.clipboard.writeText(handleText);
+                setCopied(true);
+                setInterval(() => {
+                  setCopied(false);
+                }, 2000);
+              }
+        }} className="bg-blue-600 text-white text-sm md:text-md w-28 rounded-3xl font-bold h-12 md:h-14 uppercase px-2 hover:scale-110 duration-500 hover:shadow">
+           {copied ? 'Copied!' : 'c o p y'}
         </button>
       </div>
       <div className="flex pt-10 justify-around items-center">
